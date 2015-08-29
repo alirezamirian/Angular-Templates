@@ -1,0 +1,4 @@
+*.iml
+.idea
+/out
+angular-templates.jar

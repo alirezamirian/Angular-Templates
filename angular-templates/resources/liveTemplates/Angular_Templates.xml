@@ -1,0 +1,27 @@
+<templateSet group="Angular Templates">
+  <template name="acf" value="(function(){&#10;    &quot;use strict&quot;;&#10;    angular.module('$moduleName$')&#10;        .controller('$controllerName$Controller', $controllerName$ControllerProvider);&#10;    &#10;    function $controllerName$ControllerProvider($scope){&#10;        $END$&#10;    }&#10;    &#10;})();" description="Creates a file for a controller attached to a module" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="controllerName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="adf" value="(function(){&#10;    &quot;use strict&quot;;&#10;    angular.module('$moduleName$')&#10;        .directive('$directiveName$', $directiveName$DirectiveProvider);&#10;    &#10;    function $directiveName$DirectiveProvider(){&#10;        return{&#10;            $END$&#10;        }&#10;    }&#10;    &#10;})();" description="Creates a file for a directive attached to a module" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="directiveName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="aff" value="(function(){&#10;    &quot;use strict&quot;;&#10;    angular.module('$moduleName$')&#10;        .factory('$factoryName$', $factoryName$Factory);&#10;    &#10;    function $factoryName$Factory(){&#10;        $END$&#10;    }&#10;    &#10;})();" description="Creates a file for a factory service attached to a module" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="factoryName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
