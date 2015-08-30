@@ -5,7 +5,7 @@ An IntelliJ Plugin (for all IDEs based in IntelliJ IDEA platform) bunch of live 
 All templates are places in 
 **Angular Template** group within **Settings** > **Editor** > 
 **[Live Templates](https://www.jetbrains.com/idea/help/live-templates-2.html)** and are available under abbreviations
-starting with `@`. 
+starting with `@` (Abbreviation of **A**ngular **T**emplates). 
 
 Below is the list of currently supported templates:
 
