@@ -52,8 +52,11 @@ function getTemplatesDescription(){
 }
 
 function getMarkdownFromJsObj(result){
-    return result.templateSet.template.map(function(template){
-        //console.log(template);
-        return "- " + template.$.name + ": " + template.$.description;
-    }).join("\n");
+    return "Abbreviation | Description\n" +
+            "----------- | ------------\n" +
+        result.templateSet.template.map(convertToMarkdown).join("\n");
+}
+
+function convertToMarkdown(template){
+    return "" + template.$.name + " | " + template.$.description;
 }
