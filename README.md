@@ -2,7 +2,7 @@
 
 An IntelliJ Plugin (for all IDEs based in IntelliJ IDEA platform) bunch of live templates for different angular snippets.
 
-All templates are places in 
+All templates are placed in 
 **Angular Template** group within **Settings** > **Editor** > 
 **[Live Templates](https://www.jetbrains.com/idea/help/live-templates-2.html)** and are available under abbreviations
 starting with `@` (Abbreviation of **A**ngular **T**emplates). 
