@@ -4,14 +4,17 @@
     <variable name="componentType" expression="enum(&quot;directive&quot;, &quot;controller&quot;, &quot;filter&quot;, &quot;factory&quot;)" defaultValue="" alwaysStopAt="true" />
     <variable name="componentName" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="factoryName" expression="angularFactory(componentType, componentName)" defaultValue="" alwaysStopAt="true" />
-    <context />
-  </template>
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>  </template>
   <template name="@controller iife" value="(function(angular){&#10;    &quot;use strict&quot;;&#10;    angular.module('$moduleName$')&#10;        .controller('$controllerName$Controller', $controllerNameCapitilized$Controller);&#10;    &#10;    function $controllerNameCapitilized$Controller($scope){&#10;        var $this$ = this;&#10;        &#10;        $END$&#10;    }&#10;    &#10;})(angular);" description="Add a controller to a module wrapped in an IIFE" toReformat="false" toShortenFQNames="true">
     <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="controllerName" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="controllerNameCapitilized" expression="capitalize(controllerName)" defaultValue="" alwaysStopAt="true" />
     <variable name="this" expression="enum(&quot;ctrl&quot;, &quot;_this&quot;, &quot;vm&quot;)" defaultValue="" alwaysStopAt="true" />
-    <context />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
   </template>
   <template name="@directive iife" value="(function(angular){&#10;    &quot;use strict&quot;;&#10;    angular.module('$moduleName$')&#10;        .directive('$directiveName$', $directiveName$Directive);&#10;    &#10;    function $directiveName$Directive(){&#10;        return {&#10;            restrict: &quot;$restrict$&quot;,&#10;            $fn$: $fn$Fn&#10;        };&#10;        &#10;        function $fn$Fn($fnSignature$){&#10;            $END$&#10;        }&#10;    }&#10;    &#10;})(angular);" description="Add a directive to a module wrapped in an IIFE" toReformat="false" toShortenFQNames="true">
     <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
@@ -19,18 +22,23 @@
     <variable name="restrict" expression="enum(&quot;E&quot;, &quot;A&quot;, &quot;C&quot;, &quot;EA&quot;, &quot;AC&quot;, &quot;EAC&quot;)" defaultValue="" alwaysStopAt="true" />
     <variable name="fn" expression="enum(&quot;compile&quot;, &quot;link&quot;)" defaultValue="" alwaysStopAt="true" />
     <variable name="fnSignature" expression="AngularMethodSignatureMacro(fn)" defaultValue="" alwaysStopAt="true" />
-    <context />
-  </template>
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>  </template>
   <template name="@factory iife" value="(function(angular){&#10;    &quot;use strict&quot;;&#10;    angular.module('$moduleName$')&#10;        .factory('$factoryName$', $factoryName$Factory);&#10;    &#10;    function $factoryName$Factory(){&#10;        $END$&#10;    }&#10;    &#10;})(angular);" description="Add a factory to a module wrapped in an IIFE" toReformat="false" toShortenFQNames="true">
     <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="factoryName" expression="" defaultValue="" alwaysStopAt="true" />
-    <context />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
   </template>
   <template name="@service iife" value="(function(angular){&#10;    &quot;use strict&quot;;&#10;    angular.module('$moduleName$')&#10;        .service('$serviceInstanceName$', $serviceConstructor$);&#10;    &#10;    function $serviceConstructor$(){&#10;        $END$&#10;    }&#10;    &#10;})(angular);" description="Add a service to a module wrapped in an IIFE" toReformat="false" toShortenFQNames="true">
     <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="serviceInstanceName" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="serviceConstructor" expression="capitalize(serviceInstanceName)" defaultValue="" alwaysStopAt="true" />
-    <context />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
   </template>
   <template name="@provider iife" value="(function(angular){&#10;    &quot;use strict&quot;;&#10;    angular.module('$moduleName$')&#10;        .provider('$instanceName$', $instanceNameCapitalized$Provider);&#10;    &#10;    function $instanceNameCapitalized$Provider(){&#10;        this.$get = function $instanceName$Factory(){&#10;            $END$        &#10;        }&#10;    }&#10;    &#10;})(angular);" description="Add a provider to a module wrapped in  an IIFE" toReformat="false" toShortenFQNames="true">
     <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
