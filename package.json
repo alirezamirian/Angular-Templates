@@ -1,0 +1,23 @@
+{
+  "name": "Angular-Templates",
+  "version": "1.0.0",
+  "description": "A bunch of live templates for different angular snippets.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alirezamirian/Angular-Templates.git"
+  },
+  "author": "Alireza Mirian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alirezamirian/Angular-Templates/issues"
+  },
+  "homepage": "https://github.com/alirezamirian/Angular-Templates",
+  "devDependencies": {
+    "q": "^1.4.1",
+    "xml2js": "^0.4.10"
+  }
+}
