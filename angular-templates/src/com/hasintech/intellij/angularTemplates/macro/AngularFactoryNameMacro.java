@@ -1,5 +1,6 @@
-package com.hasintech.intellij.angularTemplates;
+package com.hasintech.intellij.angularTemplates.macro;
 
+import com.hasintech.intellij.angularTemplates.AngularComponentType;
 import com.intellij.codeInsight.template.Expression;
 import com.intellij.codeInsight.template.ExpressionContext;
 import com.intellij.codeInsight.template.Result;
@@ -27,9 +28,7 @@ public class AngularFactoryNameMacro extends MacroBase {
         Result componentNameExp = expressions[1].calculateResult(expressionContext);
 
         if(componentNameExp == null
-                || componentTypeExp == null
-                || componentTypeExp.toString().isEmpty()
-                || componentNameExp.toString().isEmpty())
+                || componentTypeExp == null)
             return null;
 
         AngularComponentType componentType;
@@ -40,7 +39,7 @@ public class AngularFactoryNameMacro extends MacroBase {
             e.printStackTrace();
             return null;
         }
-        String componentName = componentTypeExp.toString();
+        String componentName = componentNameExp.toString();
         switch(componentType){
             case FILTER:
             case DIRECTIVE:

@@ -29,7 +29,8 @@
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
     <defaultLiveTemplatesProvider implementation="com.hasintech.intellij.angularTemplates.AngularLiveTemplateProvider"></defaultLiveTemplatesProvider>
-    <liveTemplateMacro implementation="com.hasintech.intellij.angularTemplates.AngularFactoryNameMacro"/>
+    <liveTemplateMacro implementation="com.hasintech.intellij.angularTemplates.macro.AngularFactoryNameMacro"/>
+    <liveTemplateMacro implementation="com.hasintech.intellij.angularTemplates.macro.AngularMethodSignatureMacro"/>
   </extensions>
 
   <application-components>
