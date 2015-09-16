@@ -3,8 +3,8 @@
 An IntelliJ Plugin (for all IDEs based in IntelliJ IDEA platform) bunch of live templates for different angular snippets.
 
 All templates are placed in 
-**Angular Template** group within **Settings** > **Editor** > 
-**[Live Templates](https://www.jetbrains.com/idea/help/live-templates-2.html)** and are available under abbreviations
+**Angular Template** group within <kbd>Settings</kbd> > <kbd>Editor</kbd> > 
+<kbd>[Live Templates](https://www.jetbrains.com/idea/help/live-templates-2.html)</kbd> and are available under abbreviations
 starting with `@` (Abbreviation of **A**ngular **T**emplates). 
 
 Below is the list of currently supported templates:
@@ -22,4 +22,13 @@ Abbreviation | Description
 
 [comment]: # (/templateDocs)
 
+Installation
+------------
+
+- Using IDE built-in plugin system:
+  - <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Browse repositories...</kbd> > <kbd>Search for "Angular templates"</kbd> > <kbd>Install Plugin</kbd>
+- Manually:
+  - Download the [latest release][latest-release] and install it manually using <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Install plugin from disk...</kbd>
+  
+Restart IDE.
 
