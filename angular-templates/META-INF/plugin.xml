@@ -13,7 +13,13 @@
     ]]></description>
 
   <change-notes><![CDATA[
+  <br />
+  - 0.1.2
+  <ul>
+    <li>Adding support for all IntelliJ-based IDEs</li>
+  </ul>
 
+  <br />
     ]]>
   </change-notes>
 
@@ -22,9 +28,8 @@
 
   <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
        on how to target different products -->
-  <!-- uncomment to enable plugin in all products
+
   <depends>com.intellij.modules.lang</depends>
-  -->
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
