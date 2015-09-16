@@ -1,11 +1,13 @@
 #Angular Templates
 
-An IntelliJ Plugin (for all IDEs based in IntelliJ IDEA platform) bunch of live templates for different angular snippets.
+An IntelliJ Plugin (for all IDEs based in IntelliJ IDEA platform) which adds a bunch of live templates for different angular snippets.
+
+Currently templates are limited to module component registration inside IIFEs. But other common things in angular will be added in future. Improvement to currently supported snippets is also in plans (e.g. adding angular docs which is in sync with component while you are adding it).
 
 All templates are placed in 
 **Angular Template** group within <kbd>Settings</kbd> > <kbd>Editor</kbd> > 
 <kbd>[Live Templates](https://www.jetbrains.com/idea/help/live-templates-2.html)</kbd> and are available under abbreviations
-starting with `@` (Abbreviation of **A**ngular **T**emplates). 
+starting with `@` (**@** => **A**ngular **T**emplates). 
 
 Below is the list of currently supported templates:
 
