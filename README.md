@@ -34,6 +34,8 @@ Installation
   
 Restart IDE.
 
-Below is an example of `@directive iife` usage:
-![angulartemplates_directive-iife](https://cloud.githubusercontent.com/assets/3150694/11534433/fe77cbc4-9923-11e5-9faf-20de6f6f2042.gif)
+##Usage examples
+
+####`@directive iife`:
+![@directive iife](https://cloud.githubusercontent.com/assets/3150694/11534433/fe77cbc4-9923-11e5-9faf-20de6f6f2042.gif)
 
