@@ -6,7 +6,6 @@ import com.intellij.codeInsight.template.ExpressionContext;
 import com.intellij.codeInsight.template.Result;
 import com.intellij.codeInsight.template.TextResult;
 import com.intellij.codeInsight.template.macro.MacroBase;
-import com.intellij.openapi.util.text.StringUtil;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -15,9 +14,9 @@ import org.jetbrains.annotations.Nullable;
  */
 public class AngularMethodSignatureMacro extends MacroBase {
     public AngularMethodSignatureMacro() {
-        super("AngularMethodSignatureMacro", "AngularMethodSignatureMacro(methodName)");
+        super("AngularMethodSignatureMacro", "angularMethodSignatureMacro(methodName)");
     }
-    
+
 
     @Nullable
     @Override
