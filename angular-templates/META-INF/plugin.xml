@@ -38,7 +38,7 @@
     <defaultLiveTemplatesProvider implementation="com.hasintech.intellij.angularTemplates.AngularLiveTemplateProvider"></defaultLiveTemplatesProvider>
     <liveTemplateMacro implementation="com.hasintech.intellij.angularTemplates.macro.AngularFactoryNameMacro"/>
     <liveTemplateMacro implementation="com.hasintech.intellij.angularTemplates.macro.AngularMethodSignatureMacro"/>
-    <liveTemplateMacro implementation="com.hasintech.intellij.angularTemplates.macro.AngularModuleNameSuggestionMacro"/>
+    <liveTemplateMacro implementation="com.hasintech.intellij.angularTemplates.macro.SuggestAngularModuleMacro"/>
     <editorActionHandler action="NextTemplateVariable" order="FIRST"
                          implementationClass="com.hasintech.intellij.angularTemplates.NextVariableHandler"
                          id="angularTemplates-nextVariableHandler"></editorActionHandler>

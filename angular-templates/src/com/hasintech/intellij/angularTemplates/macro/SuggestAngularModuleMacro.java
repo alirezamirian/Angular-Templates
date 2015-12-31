@@ -13,12 +13,12 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Created by alireza on 10/12/2015.
  */
-public class AngularModuleNameSuggestionMacro extends MacroBase {
+public class SuggestAngularModuleMacro extends MacroBase {
 
     private Logger logger = Logger.getInstance("AngularTemplate");
 
-    public AngularModuleNameSuggestionMacro() {
-        super("suggestAngularModuleName", "suggestAngularModuleName(moduleName)");
+    public SuggestAngularModuleMacro() {
+        super("suggestAngularModuleName", "suggestAngularModuleName()");
     }
 
     @Nullable
