@@ -40,7 +40,7 @@ Restart IDE.
 ![@directive iife](https://cloud.githubusercontent.com/assets/3150694/11534433/fe77cbc4-9923-11e5-9faf-20de6f6f2042.gif)
 
 #TODO:
-- Take controll over order of module names in auto-completion (like the order in `moduleNameSuggestion` macro).
+- Take controll over the order of module names in auto-completion (like the order in `moduleNameSuggestion` macro).
 - Add/remove module dependencies array based on module name (add it when defining new module and remove it when pointing to a previously defined module)
 - Add more options for directive template
 - Add more useful templates
