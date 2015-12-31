@@ -4,6 +4,7 @@ import com.hasintech.intellij.angularTemplates.usageStatistics.TemplateUsageStat
 import com.hasintech.intellij.angularTemplates.usageStatistics.impl.TemplateUsageStatisticsReporterImpl;
 import com.intellij.codeInsight.template.Template;
 import com.intellij.codeInsight.template.TemplateManager;
+import com.intellij.codeInsight.template.impl.TemplateImpl;
 import com.intellij.codeInsight.template.impl.TemplateManagerImpl;
 import com.intellij.codeInsight.template.impl.TemplateState;
 import com.intellij.ide.browsers.firefox.FirefoxSettings;
@@ -34,20 +35,20 @@ public class NextVariableHandler extends EditorActionHandler {
     @Override
     protected void doExecute(Editor editor, Caret caret, DataContext dataContext) {
         TemplateManager templateManager = TemplateManager.getInstance(editor.getProject());
-        logger.info(templateManager.toString());
-
         TemplateState templateState = TemplateManagerImpl.getTemplateState(editor);
-        if(lastReportedTemplate != templateState){
-            // report actually
-            logger.info("Templates reporting usage ...");
-            usageStatisticReporter.reportUsage(templateState.getTemplate());
-            logger.info(templateState.toString());
-            lastReportedTemplate = templateState;
+        logger.info(templateManager.toString());
+        if(templateState.getTemplate().getGroupName().equals("Angular Templates")){
+            if(lastReportedTemplate != templateState){
+                // report actually
+                logger.info("Templates reporting usage ...");
+                usageStatisticReporter.reportUsage(templateState.getTemplate());
+                logger.info(templateState.toString());
+                lastReportedTemplate = templateState;
+            }
+            else{
+                logger.info("Templates usage already reported");
+            }
         }
-        else{
-            logger.info("Templates usage already reported");
-        }
-        logger.info(templateState.toString());
         myOriginalHandler.execute(editor, caret, dataContext);
     }
     @Override
