@@ -42,5 +42,6 @@ Restart IDE.
 #TODO:
 - Take controll over the order of module names in auto-completion (like the order in `moduleNameSuggestion` macro).
 - Add/remove module dependencies array based on module name (add it when defining new module and remove it when pointing to a previously defined module)
+- Add angular doc above templates
 - Add more options for directive template
 - Add more useful templates
