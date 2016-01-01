@@ -39,7 +39,7 @@ public class AngularTemplatesSettingsPage extends BeanConfigurable<AngularTempla
     labelContainer.setMinimumSize(new Dimension(200,100));
     JLabel label = new JLabel("Angular Templates sends anonymous template usage statistics. ");
     result.add(label);
-    labelContainer.add(new JLabel("This data is limited to template name you invoke and is shown at "));
+    labelContainer.add(new JLabel("This data is limited to template names you invoke. It will be shown at "));
     JXHyperlink link = new JXHyperlink();
     try {
       link.setURI(new URI("https://github.com/alirezamirian/Angular-Templates"));
