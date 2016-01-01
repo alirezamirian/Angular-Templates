@@ -35,11 +35,14 @@ public class AngularTemplatesSettingsPage extends BeanConfigurable<AngularTempla
     assert parent != null;
     JComponent result = new JPanel(new VerticalLayout());
 
-    HorizontalBox labelContainer = new HorizontalBox();
-    labelContainer.setMinimumSize(new Dimension(200,100));
-    JLabel label = new JLabel("Angular Templates sends anonymous template usage statistics. ");
+//    HorizontalBox labelContainer = new HorizontalBox();
+    JLabel label = new JLabel("<html><body>" +
+            "Angular Templates sends anonymous template usage statistics. <br />" +
+            "This data is limited to <b>template names</b> you invoke and IDE version info." +
+            "</body></html>");
     result.add(label);
-    labelContainer.add(new JLabel("This data is limited to template names you invoke. It will be shown at "));
+/*
+    labelContainer.add(new JLabel("This data is limited to template names you invoke."));
     JXHyperlink link = new JXHyperlink();
     try {
       link.setURI(new URI("https://github.com/alirezamirian/Angular-Templates"));
@@ -47,9 +50,12 @@ public class AngularTemplatesSettingsPage extends BeanConfigurable<AngularTempla
     } catch (URISyntaxException e) {
       e.printStackTrace();
     }
+
     labelContainer.add(link);
     labelContainer.add(new JLabel("."));
     result.add(labelContainer);
+*/
+    result.add(label);
     result.add(parent);
 
     return result;
