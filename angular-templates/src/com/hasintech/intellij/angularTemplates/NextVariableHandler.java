@@ -16,6 +16,7 @@ import com.intellij.openapi.editor.actionSystem.EditorActionHandler;
 import com.intellij.openapi.editor.actionSystem.EditorActionManager;
 import com.intellij.openapi.editor.actionSystem.EditorWriteActionHandler;
 import org.jetbrains.annotations.NotNull;
+import settings.AngularTemplatesSettings;
 
 /**
  * Created by alireza on 12/4/2015.
@@ -37,17 +38,14 @@ public class NextVariableHandler extends EditorActionHandler {
         TemplateManager templateManager = TemplateManager.getInstance(editor.getProject());
         TemplateState templateState = TemplateManagerImpl.getTemplateState(editor);
         logger.info(templateManager.toString());
-        if(templateState.getTemplate().getGroupName().equals("Angular Templates")){
-            if(lastReportedTemplate != templateState){
-                // report actually
-                logger.info("Templates reporting usage ...");
-                usageStatisticReporter.reportUsage(templateState.getTemplate());
-                logger.info(templateState.toString());
-                lastReportedTemplate = templateState;
-            }
-            else{
-                logger.info("Templates usage already reported");
-            }
+        if(     AngularTemplatesSettings.getInstance().reportUsageStatistics &&
+                templateState.getTemplate().getGroupName().equals("Angular Templates") &&
+                lastReportedTemplate != templateState){
+            // report actually
+            logger.info("Templates reporting usage ...");
+            usageStatisticReporter.reportUsage(templateState.getTemplate());
+            logger.info(templateState.toString());
+            lastReportedTemplate = templateState;
         }
         myOriginalHandler.execute(editor, caret, dataContext);
     }

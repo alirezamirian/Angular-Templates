@@ -43,6 +43,12 @@
                          implementationClass="com.hasintech.intellij.angularTemplates.NextVariableHandler"
                          id="angularTemplates-nextVariableHandler"></editorActionHandler>
 
+    <applicationService serviceImplementation="settings.AngularTemplatesSettings"
+                        serviceInterface="settings.AngularTemplatesSettings"></applicationService>
+
+    <postStartupActivity implementation="com.hasintech.intellij.angularTemplates.PostStartup"></postStartupActivity>
+    <applicationConfigurable instance="settings.AngularTemplatesSettingsPage" id="angularTemplates.settings"
+            groupId="appearance" parentId="usage.statistics"></applicationConfigurable>
     <completion.contributor language="JavaScript"
                             implementationClass="com.hasintech.intellij.angularTemplates.ModuleNameCompletionContributor"
                             id="angularModuleNameCompletionContributor" order="first"/>
