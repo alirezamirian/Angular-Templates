@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.hasintech.intellij.angularTemplates</id>
   <name>Angular Templates</name>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <vendor email="mirian@hasintech.com" url="http://www.hasintech.com">Hasin Technology</vendor>
 
   <description><![CDATA[
@@ -13,7 +13,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-  - 1.1.0
+  - 1.1.1
   <ul>
     <li>Adding support for module name suggestion.</li>
   </ul>
