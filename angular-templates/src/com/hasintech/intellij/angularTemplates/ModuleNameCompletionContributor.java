@@ -3,17 +3,13 @@ package com.hasintech.intellij.angularTemplates;
 import com.hasintech.intellij.angularTemplates.impl.AngularModuleNameSuggesterImpl;
 import com.intellij.codeInsight.completion.*;
 import com.intellij.codeInsight.lookup.LookupElement;
-import com.intellij.codeInsight.lookup.LookupElementBuilder;
-import com.intellij.lang.javascript.JSElementTypes;
 import com.intellij.lang.javascript.JSTokenTypes;
 import com.intellij.lang.javascript.JavascriptLanguage;
 import com.intellij.lang.javascript.psi.JSArgumentList;
 import com.intellij.lang.javascript.psi.JSCallExpression;
 import com.intellij.lang.javascript.psi.JSLiteralExpression;
-import com.intellij.lang.javascript.psi.types.JSStringLiteralTypeImpl;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.patterns.PlatformPatterns;
-import com.intellij.psi.JavaTokenType;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.ProcessingContext;
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +17,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * ModuleNameCompletionContribute is now deprecated as AngularJS plugin has it out of the box in its new versions.
+ */
+@Deprecated
 public class ModuleNameCompletionContributor extends CompletionContributor {
     public ModuleNameCompletionContributor() {
         extend(CompletionType.BASIC,
