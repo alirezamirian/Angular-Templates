@@ -10,10 +10,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDocumentManager;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.stubs.StubIndex;
 import com.intellij.psi.stubs.StubIndexKey;
+import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 
@@ -84,7 +86,19 @@ public class AngularModuleNameSuggesterImpl  implements AngularModuleNameSuggest
                 if(key.isEmpty()){
                     continue;
                 }
-                Collection<VirtualFile> containingFiles = fileIndex.getContainingFiles(angularModulesIndexId, key, projectScope);
+                final Collection<VirtualFile> containingFiles = new HashSet<>();
+                try{
+                    // try file index
+                    containingFiles.addAll(fileIndex.getContainingFiles(angularModulesIndexId, key, projectScope));
+                } catch(Exception e){
+                    final Collection<PsiElement> elements = stubIndex.getElements(
+                            (StubIndexKey<String, PsiElement>) angularModulesIndexId, key, project, projectScope,
+                            PsiElement.class);
+                    for (PsiElement element : elements) {
+                        containingFiles.add(element.getContainingFile().getVirtualFile());
+                    }
+                }
+
                 if(containingFiles.size() == 0){
                     // if module name is not used inside any file in current project, we should not suggest it!
                     continue;
