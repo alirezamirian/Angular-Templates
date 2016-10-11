@@ -2,20 +2,13 @@ package com.hasintech.intellij.angularTemplates;
 
 import com.hasintech.intellij.angularTemplates.usageStatistics.TemplateUsageStatisticReporter;
 import com.hasintech.intellij.angularTemplates.usageStatistics.impl.TemplateUsageStatisticsReporterImpl;
-import com.intellij.codeInsight.template.Template;
-import com.intellij.codeInsight.template.TemplateManager;
-import com.intellij.codeInsight.template.impl.TemplateImpl;
 import com.intellij.codeInsight.template.impl.TemplateManagerImpl;
 import com.intellij.codeInsight.template.impl.TemplateState;
-import com.intellij.codeInsight.template.impl.TextExpression;
-import com.intellij.ide.browsers.firefox.FirefoxSettings;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Caret;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.actionSystem.EditorActionHandler;
-import com.intellij.openapi.editor.actionSystem.EditorActionManager;
-import com.intellij.openapi.editor.actionSystem.EditorWriteActionHandler;
 import org.jetbrains.annotations.NotNull;
 import settings.AngularTemplatesSettings;
 
