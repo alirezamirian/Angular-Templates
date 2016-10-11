@@ -38,7 +38,7 @@ public class PostStartup implements StartupActivity {
         }
     }
 
-    private void notifyUserAboutUsageStatisticReport(Project project){
+    private void notifyUserAboutUsageStatisticReport(final Project project){
         HorizontalBox row1 = new HorizontalBox();
         HorizontalBox row2 = new HorizontalBox();
         row1.add(new JLabel("Angular Templates sends anonymous usage statistics by default."));

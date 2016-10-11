@@ -1,29 +1,18 @@
 package com.hasintech.intellij.angularTemplates.usageStatistics.impl;
 
+import com.google.gson.Gson;
 import com.hasintech.intellij.angularTemplates.usageStatistics.TemplateUsageStatisticReporter;
 import com.hasintech.intellij.angularTemplates.usageStatistics.UsageModel;
 import com.intellij.codeInsight.template.Template;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.diagnostic.Logger;
-
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.wm.StatusBarWidget;
-import com.intellij.util.EnvironmentUtil;
-import com.intellij.util.Time;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.fluent.Async;
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.concurrent.FutureCallback;
 import org.apache.http.entity.StringEntity;
-
-import com.google.gson.Gson;
-import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.util.Date;
 
