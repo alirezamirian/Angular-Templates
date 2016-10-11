@@ -13,6 +13,12 @@
     ]]></description>
 
   <change-notes><![CDATA[
+  - 1.1.3
+  <ul>
+    <li>Fix blocking Enter and Tab keys in new versions of Intellij platform</li>
+    <li>Remove autocompletion contributor for module names in favour of the same feature in AngularJS plugin</li>
+    <li>Fix module name suggestion macro not working in new versions of Intellij platform</li>
+  </ul>
   - 1.1.2
   <ul>
     <li>Adding support for module name suggestion.</li>
