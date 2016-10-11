@@ -3,6 +3,7 @@ package com.hasintech.intellij.angularTemplates.impl;
 import com.hasintech.intellij.angularTemplates.AngularModuleNameSuggester;
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
+import com.intellij.ide.PowerSaveMode;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
@@ -37,6 +38,10 @@ public class AngularModuleNameSuggesterImpl  implements AngularModuleNameSuggest
     }
     @Override
     public LookupElement[] suggest(Project project, Editor editor) {
+
+        if(PowerSaveMode.isEnabled()){
+            return LookupElement.EMPTY_ARRAY;
+        }
         final Set<LookupElement> suggestions = new LinkedHashSet<>();
 
         final StubIndex stubIndex = StubIndex.getInstance();
@@ -45,12 +50,12 @@ public class AngularModuleNameSuggesterImpl  implements AngularModuleNameSuggest
         if(angularModulesIndexId == null){
             // AngularJS plugin is not installed and so there is no index for angular modules. So we give up in
             // suggesting module names
-            return new LookupElement[0];
+            return LookupElement.EMPTY_ARRAY;
         }
 
         if(project == null){
             // We will not suggest all indexed modules in the world if macro is not used in context of a project
-            return new LookupElement[0];
+            return LookupElement.EMPTY_ARRAY;
         }
 
         final Document document = editor.getDocument();
@@ -138,7 +143,7 @@ public class AngularModuleNameSuggesterImpl  implements AngularModuleNameSuggest
         } catch (Throwable e) {
             logger.info("something went wrong in module name suggestion!");
             logger.info(e.getMessage());
-            return new LookupElement[0];
+            return LookupElement.EMPTY_ARRAY;
         }
     }
 
