@@ -7,6 +7,7 @@ import com.intellij.codeInsight.template.TemplateManager;
 import com.intellij.codeInsight.template.impl.TemplateImpl;
 import com.intellij.codeInsight.template.impl.TemplateManagerImpl;
 import com.intellij.codeInsight.template.impl.TemplateState;
+import com.intellij.codeInsight.template.impl.TextExpression;
 import com.intellij.ide.browsers.firefox.FirefoxSettings;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.diagnostic.Logger;
@@ -26,27 +27,38 @@ public class NextVariableHandler extends EditorActionHandler {
     private static TemplateState lastReportedTemplate = null;
     private static TemplateUsageStatisticReporter usageStatisticReporter = new TemplateUsageStatisticsReporterImpl();
 
-    private final EditorWriteActionHandler myOriginalHandler;
+    private final EditorActionHandler myOriginalHandler;
 
-    public NextVariableHandler(EditorWriteActionHandler originalHandler) {
+    public NextVariableHandler(EditorActionHandler originalHandler) {
         super(true);
         myOriginalHandler = originalHandler;
     }
 
     @Override
     protected void doExecute(Editor editor, Caret caret, DataContext dataContext) {
-        TemplateManager templateManager = TemplateManager.getInstance(editor.getProject());
         TemplateState templateState = TemplateManagerImpl.getTemplateState(editor);
-        logger.info(templateManager.toString());
-        if(     AngularTemplatesSettings.getInstance().reportUsageStatistics &&
-                templateState.getTemplate().getGroupName().equals("Angular Templates") &&
-                lastReportedTemplate != templateState){
-            // report actually
-            logger.info("Templates reporting usage ...");
-            usageStatisticReporter.reportUsage(templateState.getTemplate());
-            logger.info(templateState.toString());
-            lastReportedTemplate = templateState;
+        // We have nothing to do with people's template! so first check if its an AngularTemplates template
+        if(templateState.getTemplate().getGroupName().equals("Angular Templates")){
+            // Report usage statistics if applicable
+            if(     AngularTemplatesSettings.getInstance().reportUsageStatistics &&
+                    lastReportedTemplate != templateState){
+                // report actually
+                logger.info("Templates reporting usage ...");
+                usageStatisticReporter.reportUsage(templateState.getTemplate());
+                logger.info(templateState.toString());
+                lastReportedTemplate = templateState;
+            }
+            // add module dependencies to template if module name is new
+//            templateState.getTemplate().addVariable("alireza",new TextExpression("mirian"),true);
+            /*TemplateImpl template = (TemplateImpl) TemplateManagerImpl.getInstance(editor.getProject())
+                    .createTemplate("angularTemplates", "test");
+            template.addVariable("var1", new TextExpression("value1"), true);
+            templateState.start(template,null, null);*/
+            /*if(templateState.getCurrentVariableNumber() == 0){
+                templateState.getTemplate().removeVariable(1);
+            }*/
         }
+
         myOriginalHandler.execute(editor, caret, dataContext);
     }
     @Override
